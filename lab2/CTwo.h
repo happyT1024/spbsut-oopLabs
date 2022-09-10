@@ -1,7 +1,5 @@
 #include "COne.h"
 #include <iostream>
-#ifndef HELLOWORLD2_CTWO_H
-#define HELLOWORLD2_CTWO_H
 using std::cout;
 
 class CTwo{
