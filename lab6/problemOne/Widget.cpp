@@ -1,9 +1,3 @@
-//
-// Created by matvey on 12.09.22.
-//
-
-
-
 #include "Widget.h"
 
 void Widget::init(double & a, double & b){
@@ -68,22 +62,11 @@ Widget::Widget()
     connect(button2, SIGNAL(clicked()), this, SLOT(minus()));
     connect(button3, SIGNAL(clicked()), this, SLOT(mul()));
     connect(button4, SIGNAL(clicked()), this, SLOT(del()));
-
-
-    /*QLabel * plb = new QLabel(tr("Test"), this);
-    plb->setGeometry(20, 20, 80, 24);
-
-    QLineEdit * ple = new QLineEdit(this);
-    ple->setGeometry(110, 20, 80, 24);
-
-    QPushButton * ppb = new QPushButton(tr("Ok"), this);
-    ppb->setGeometry(20, 50, 80, 24);*/
-
-
-
 }
 
 Widget::~Widget()
 {
-
+    delete line1;
+    delete line2;
+    delete line3;
 }
