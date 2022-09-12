@@ -75,6 +75,14 @@ Widget::Widget()
 }
 
 Widget::~Widget() {
-
+    delete line1;
+    delete line2;
+    
+    delete buttonClearLeft;
+    delete buttonClearRight;
+    delete buttonClearAll;
+    delete buttonSwap;
+    delete buttonCopyLeft;
+    delete buttonCopyRight;
 }
 
