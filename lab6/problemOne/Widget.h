@@ -1,6 +1,3 @@
-//
-// Created by matvey on 12.09.22.
-//
 #include <QApplication>
 #include <QPushButton>
 #include <QLineEdit>
