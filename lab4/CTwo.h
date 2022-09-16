@@ -1,7 +1,3 @@
-#ifndef HELLOWORLD2_CTWO_H
-#define HELLOWORLD2_CTWO_H
-
-
 #include "COne.h"
 #include <iostream>
 using std::cout;
@@ -49,6 +45,3 @@ private:
     COne* p;
     double d;
 };
-
-
-#endif //HELLOWORLD2_CTWO_H
