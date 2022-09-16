@@ -1,9 +1,4 @@
-//
-// Created by matvey on 10.09.22.
-//
 #include "CTwo.h"
-#ifndef HELLOWORLD2_CTHREE_H
-#define HELLOWORLD2_CTHREE_H
 
 
 class CThree : public CTwo{
@@ -38,6 +33,3 @@ public:
 private:
     int _num;
 };
-
-
-#endif //HELLOWORLD2_CTHREE_H
