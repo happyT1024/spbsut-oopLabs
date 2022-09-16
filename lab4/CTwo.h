@@ -1,7 +1,3 @@
-//
-// Created by matvey on 10.09.22.
-//
-
 #ifndef HELLOWORLD2_CTWO_H
 #define HELLOWORLD2_CTWO_H
 
