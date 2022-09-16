@@ -1,10 +1,4 @@
-//
-// Created by matvey on 10.09.22.
-//
 #include "CThree.h"
-#ifndef HELLOWORLD2_CFOUR_H
-#define HELLOWORLD2_CFOUR_H
-
 
 class CFour : public CThree{
 public:
@@ -43,5 +37,3 @@ private:
     bool f;
 };
 
-
-#endif //HELLOWORLD2_CFOUR_H
