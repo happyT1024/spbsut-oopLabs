@@ -1,7 +1,3 @@
-//
-// Created by matvey on 10.09.22.
-//
-
 #include "CTwo.h"
 #include "CTwo.h"
 CTwo & CTwo::operator=(CTwo const & cTwo){
