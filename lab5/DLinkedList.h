@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <exception>
 
 using std::cout;
 using std::string;
@@ -53,12 +54,16 @@ public:
     }
 
     void add(int index, T value) {
-        if (index >= size) {
-            exit(1);
+        if (index >= size || index<0) {
+            throw std::runtime_error(std::string("Out of Range"));
+        }
+        if (index == 0){
+            this->push_start(value);
+            return;
         }
         Node *a = head;
         Node *node = new Node(value);
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index-1; i++) {
             a = a->getNext();
         }
         Node *b = a->getNext();
@@ -68,6 +73,9 @@ public:
     }
 
     void changeValue(int index, T value) {
+        if (index >= size || index<0) {
+            throw std::runtime_error(std::string("Out of Range"));
+        }
         Node *a = head;
         for (int i = 0; i < index; i++) {
             a = a->getNext();
@@ -76,6 +84,9 @@ public:
     }
 
     T getValue(int index) const {
+        if (index >= size) {
+            throw std::runtime_error(std::string("Out of Range"));
+        }
         Node *a = head;
         for (int i = 0; i < index; i++) {
             a = a->getNext();
@@ -83,10 +94,32 @@ public:
         return a->getValue();
     }
 
+    void pop_back() {
+        if (this->isEmpty()) {
+            throw std::runtime_error(std::string("List is Empty"));
+        }
+        Node *tmp = tail->getPrev();
+        delete tail;
+        tail = tmp;
+        size--;
+    }
+
+    void pop_start() {
+        if (this->isEmpty()) {
+            throw std::runtime_error(std::string("List is Empty"));
+        }
+        Node *tmp = head->getNext();
+        head->setNext(0);
+        delete head;
+        tmp->setPrev(0);
+        head = tmp;
+        size--;
+    }
+
     void print() {
         Node *a = head;
         cout << "[";
-        string str = "";
+        string str;
         for (int i = 0; i < size; i++) {
             cout << str << a->getValue();
             str = ", ";
@@ -95,7 +128,7 @@ public:
         cout << "]\n";
     }
 
-    ~DLinkedList(){
+    ~DLinkedList() {
         delete head;
     }
 
@@ -117,6 +150,14 @@ private:
             newNext->prev = this;
         }
 
+        void setPrev(Node *prev) {
+            Node::prev = prev;
+        }
+
+        void setNext(Node *next) {
+            Node::next = next;
+        }
+
         void push_start(Node *newPrev) {
             prev = newPrev;
             newPrev->next = this;
@@ -124,6 +165,10 @@ private:
 
         Node *getNext() {
             return next;
+        }
+
+        Node *getPrev() {
+            return prev;
         }
 
         T getValue() const {
