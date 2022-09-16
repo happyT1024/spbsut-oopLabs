@@ -1,11 +1,3 @@
-//
-// Created by matvey on 10.09.22.
-//
-
-#ifndef HELLOWORLD2_CONE_H
-#define HELLOWORLD2_CONE_H
-
-
 #include <string>
 #include <iostream>
 using std::string;
@@ -42,6 +34,3 @@ private:
     long l;
     string s;
 };
-
-
-#endif //HELLOWORLD2_CONE_H
